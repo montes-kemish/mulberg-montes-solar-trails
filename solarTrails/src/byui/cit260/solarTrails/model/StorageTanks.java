@@ -14,7 +14,7 @@ import java.util.Objects;
 public class StorageTanks implements Serializable {
 
 private String storageType;
-private String quantityInStock;
+private double quantityInStock;
 private double requiredQuantity;
 
     public StorageTanks() {
