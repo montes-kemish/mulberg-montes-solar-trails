@@ -5,6 +5,7 @@
  */
 package solartrails;
 
+import byui.cit260.solarTrails.model.Map;
 import byui.cit260.solarTrails.model.Player;
 import byui.cit260.solarTrails.model.SpaceCraft;
 import byui.cit260.solarTrails.model.UnidentifiedObject;
@@ -47,6 +48,17 @@ public class SolarTrails {
         
         String unidentifiedObjectInfo = unidentifiedObjectOne.toString();
         System.out.println(unidentifiedObjectInfo); 
+        
+        Map mapOne = new Map();
+        
+        mapOne.setColumnCount(10);
+        mapOne.setRowCount(10);
+        
+        String mapInfo = mapOne.toString();
+        System.out.println(mapInfo);
+        
+        
+        
         
         
         
