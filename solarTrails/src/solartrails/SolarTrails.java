@@ -7,6 +7,7 @@ package solartrails;
 
 import byui.cit260.solarTrails.model.Player;
 import byui.cit260.solarTrails.model.SpaceCraft;
+import byui.cit260.solarTrails.model.UnidentifiedObject;
 
 /**
  *
@@ -36,6 +37,18 @@ public class SolarTrails {
         
         String spaceCraftInfo = spaceCraftOne.toString();
         System.out.println(spaceCraftInfo);
+        
+        
+        UnidentifiedObject unidentifiedObjectOne = new UnidentifiedObject();
+        
+        unidentifiedObjectOne.setDescription("rock");
+        unidentifiedObjectOne.setCoordinates("21,02");
+        unidentifiedObjectOne.setDiscoveries("Cure Cancer");
+        
+        String unidentifiedObjectInfo = unidentifiedObjectOne.toString();
+        System.out.println(unidentifiedObjectInfo); 
+        
+        
         
         
         
