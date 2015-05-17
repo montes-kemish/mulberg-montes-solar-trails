@@ -38,5 +38,7 @@ public class SolarTrails {
         System.out.println(spaceCraftInfo);
         
         
+        
+        
     }   
 }
