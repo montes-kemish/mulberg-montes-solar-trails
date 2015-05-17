@@ -6,6 +6,7 @@
 package solartrails;
 
 import byui.cit260.solarTrails.model.Player;
+import byui.cit260.solarTrails.model.SpaceCraft;
 
 /**
  *
@@ -24,5 +25,18 @@ public class SolarTrails {
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
-    }
+        
+        SpaceCraft spaceCraftOne = new SpaceCraft();
+        
+        spaceCraftOne.setName("Falcon Shuttle");
+        spaceCraftOne.setCrewCapacity(3);
+        spaceCraftOne.setFuelCapacity(1000);
+        spaceCraftOne.setLength(50);
+        spaceCraftOne.setWidth(10);
+        
+        String spaceCraftInfo = spaceCraftOne.toString();
+        System.out.println(spaceCraftInfo);
+        
+        
+    }   
 }
