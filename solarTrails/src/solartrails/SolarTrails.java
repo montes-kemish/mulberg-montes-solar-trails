@@ -5,6 +5,7 @@
  */
 package solartrails;
 
+import byui.cit260.solarTrails.model.Location;
 import byui.cit260.solarTrails.model.Map;
 import byui.cit260.solarTrails.model.Player;
 import byui.cit260.solarTrails.model.SpaceCraft;
@@ -56,6 +57,17 @@ public class SolarTrails {
         
         String mapInfo = mapOne.toString();
         System.out.println(mapInfo);
+        
+        
+        Location locationOne = new Location();
+        
+        
+        locationOne.setColumn(2);
+        locationOne.setRow(5);
+        locationOne.setVisited(true);
+        
+        String locationInfo = locationOne.toString();
+        System.out.println(locationInfo);
         
         
         
