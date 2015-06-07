@@ -17,12 +17,12 @@ public class MainMenuView {
             + "\n------------------------------------"
             + "\n| Main Menu                       |"
             + "\n------------------------------------"
-            + "\nN - Start a new game"
             + "\nG - Start Game"
-            + "\nH - Get help on how to play the game"
+            + "\nH - Help"
             + "\nS - Save the Game"
-            + "\nE - Exit"
-            + "n--------------------------------------";
+            + "\nL - Load Game"
+            + "\nE - Quit"
+            + "\n--------------------------------------";
     public void displayMenu(){
         char choice = ' ';
         do {
@@ -60,11 +60,8 @@ public class MainMenuView {
     private void doAction(char choice) {
        
         switch (choice) {
-            case 'N':
-                this.startNewGame();
-                break;
             case 'G':
-                this.startExistingGame();
+                this.startNewGame();
                 break;
             case 'H':
                 this.displayHelpMenu();
@@ -72,7 +69,10 @@ public class MainMenuView {
             case 'S':
                 this.saveGame();
                 break;
-            case 'E':
+            case 'L':
+                this.startExistingGame();
+                break;
+            case 'Q':
                 return;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -90,7 +90,8 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         HelpMenuView helpMenu = new HelpMenuView();
+         helpMenu.displayMenu();
     }
 
     private void saveGame() {
