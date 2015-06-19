@@ -11,9 +11,10 @@ import java.util.Scanner;
  *
  * @author User
  */
-public class MainMenuView {
-
-    private final String MENU = "\n"
+public class MainMenuView extends View {
+    
+    public MainMenuView() {
+        super("\n"
             + "\n------------------------------------"
             + "\n| Main Menu                       |"
             + "\n------------------------------------"
@@ -22,39 +23,20 @@ public class MainMenuView {
             + "\nS - Save the Game"
             + "\nL - Load Game"
             + "\nE - Quit"
-            + "\n--------------------------------------";
-    public void displayMenu(){
-        char choice = ' ';
-        do {
-            System.out.println(MENU);
-            String input = this.getInput();
-            choice = input.charAt(0);
-            
-            this.doAction(choice);
-        }
-        while(choice != 'E');
+            + "\n--------------------------------------");
+    }
+    
+    @Override
+    public boolean doAction(Object obj) {
         
+        String value = Object obj;
+        
+        value = value.toUpperCase();
+        char choice = value.charAt(0);
     }
 
-    public String getInput() {
-     
-        boolean valid = false;
-        String getInput = null;
-        Scanner keyboard = new Scanner(System.in);
-       
-        while(!valid){
-           
-           System.out.println("Select an option");
-           getInput = keyboard.nextLine();
-           getInput = getInput.trim();
-           
-           if (getInput.length() != 1){
-               System.out.println("Options are single capitalized letters");
-               continue;
-           }
-           break;
-       }
-       return getInput;
+    public MainMenuView(String promptMessage) {
+        super(promptMessage);
     }
 
     private void doAction(char choice) {
@@ -91,7 +73,7 @@ public class MainMenuView {
 
     private void displayHelpMenu() {
          HelpMenuView helpMenu = new HelpMenuView();
-         helpMenu.displayMenu();
+         helpMenu.display();
     }
 
     private void saveGame() {

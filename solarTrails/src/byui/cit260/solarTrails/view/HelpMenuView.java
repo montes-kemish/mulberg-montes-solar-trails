@@ -11,9 +11,10 @@ import java.util.Scanner;
  *
  * @author Angela Mulberg
  */
-public class HelpMenuView {
+public class HelpMenuView extends View {
     
-private final String MENU = "\n"
+    public HelpMenuView() {
+        super ("\n"
             + "\n------------------------------------"
             + "\n| Help Menu                       |"
             + "\n------------------------------------"
@@ -25,41 +26,17 @@ private final String MENU = "\n"
             + "\nF - Harvesting Fuel"
             + "\nH - Hunting for Food and Water"
             + "\nQ - Quit"
-            + "\n--------------------------------------";
-    public void displayMenu(){
-        char choice = ' ';
-        do {
-            System.out.println(MENU);
-            String input = this.getInput();
-            choice = input.charAt(0);
+            + "\n--------------------------------------");
+    }
+    @Override
+    public boolean doAction(Object obj) {
+        
+        String value = Object obj;
+        value = value.toUpperCase();
+        char choice = value.charAt(0);
             
-            this.doAction(choice);
-        
-        } while(choice != 'Q');
-        
     }
-    
-    public String getInput() {
-     
-        boolean valid = false;
-        String getInput = null;
-        Scanner keyboard = new Scanner(System.in);
-       
-        while(!valid){
-           
-           System.out.println("Select an option");
-           getInput = keyboard.nextLine();
-           getInput = getInput.trim();
-           
-           if (getInput.length() != 1){
-               System.out.println("Options are single capitalized letters");
-               continue;
-           }
-           break;
-       }
-       return getInput;
-    }
-    
+   
     private void doAction(char choice) {
        
         switch (choice) {

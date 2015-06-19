@@ -30,7 +30,7 @@ import java.util.Scanner;
         this.displayWelcomeMessage(player);
         //display the main menu
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMenu();
+        mainMenu.display();
         
 }
 
