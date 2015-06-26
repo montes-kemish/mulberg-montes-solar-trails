@@ -9,8 +9,8 @@ package byui.cit260.solarTrails.view;
  *
  * @author silivrenwolf
  */
-public class ViewInterface {
-        public void disply();
+public interface ViewInterface {
+        public void display();
         public String getInput();
         public boolean doAction(Object obj);
     

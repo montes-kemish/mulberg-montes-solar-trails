@@ -49,10 +49,7 @@ private double requiredQuantity;
         if (!Objects.equals(this.quantityInStock, other.quantityInStock)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.requiredQuantity) != Double.doubleToLongBits(other.requiredQuantity)) {
-            return false;
-        }
-        return true;
+        return Double.doubleToLongBits(this.requiredQuantity) == Double.doubleToLongBits(other.requiredQuantity);
     }
 
 
@@ -60,7 +57,7 @@ private double requiredQuantity;
         return storageType;
     }
 
-    public String getQuantityInStock() {
+    public double getQuantityInStock() {
         return quantityInStock;
     }
 

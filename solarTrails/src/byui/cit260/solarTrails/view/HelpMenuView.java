@@ -31,15 +31,11 @@ public class HelpMenuView extends View {
     @Override
     public boolean doAction(Object obj) {
         
-        String value = Object obj;
+        String value = (String) obj; // casting to change data type
         value = value.toUpperCase();
         char choice = value.charAt(0);
-            
-    }
-   
-    private void doAction(char choice) {
-       
-        switch (choice) {
+        
+         switch (choice) {
             case 'O':
                 this.overview();
                 break;
@@ -62,14 +58,15 @@ public class HelpMenuView extends View {
                 this.huntForFoodAndWater();
                 break;
             case 'Q':
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
-        
+            return false;
     }
-
+   
+   
     private void overview() {
         System.out.println("You are the world's leading aeropace scientists.");
     }

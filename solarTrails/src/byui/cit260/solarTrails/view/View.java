@@ -26,11 +26,11 @@ public abstract class View implements ViewInterface {
         
         do {
             System.out.println(this.promptMessage);
-            value = this.Input();
+            value = this.getInput();
             done = this.doAction(value);
         } while (!done);
     }
-}
+
 @Override
 public String getInput() {
     Scanner keyboard = new Scanner(System.in);
@@ -51,7 +51,7 @@ public String getInput() {
     }
     
     return value;
-
+}
 public String getPromptMessage() {
     return promptMessage;
 }

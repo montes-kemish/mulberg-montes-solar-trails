@@ -29,19 +29,12 @@ public class MainMenuView extends View {
     @Override
     public boolean doAction(Object obj) {
         
-        String value = Object obj;
+        String value = (String) obj; // casting we must use it when we want to change the data type
         
         value = value.toUpperCase();
         char choice = value.charAt(0);
-    }
-
-    public MainMenuView(String promptMessage) {
-        super(promptMessage);
-    }
-
-    private void doAction(char choice) {
-       
-        switch (choice) {
+        
+         switch (choice) {
             case 'G':
                 this.startNewGame();
                 break;
@@ -55,13 +48,19 @@ public class MainMenuView extends View {
                 this.startExistingGame();
                 break;
             case 'Q':
-                return;
+                return true; // boolean function 
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
-        
+         return false;
     }
+
+    public MainMenuView(String promptMessage) {
+        super(promptMessage);
+    }
+
+    
 
     private void startNewGame() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
