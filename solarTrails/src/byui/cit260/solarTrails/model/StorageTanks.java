@@ -16,6 +16,7 @@ public class StorageTanks implements Serializable {
 private String storageType;
 private double quantityInStock;
 private double requiredQuantity;
+private Container container;
 
     public StorageTanks() {
     }
@@ -65,5 +66,13 @@ private double requiredQuantity;
         return requiredQuantity;
     }
 
+    public Container getContainer() {
+        return container;
+    }
+
+    public void setContainer(Container container) {
+        this.container = container;
+    }
+    
 
 }

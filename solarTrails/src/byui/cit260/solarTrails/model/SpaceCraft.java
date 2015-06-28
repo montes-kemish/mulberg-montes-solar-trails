@@ -10,107 +10,38 @@ import java.util.Objects;
 
 /**
  *
- * @author User
+ * @author User Missig the Fuel Capacity fixed number, first define, then develop
  */
-public class SpaceCraft implements Serializable {
+public enum SpaceCraft implements Serializable {
     
-    //class instance variable
-    private String name;
-    private double width;
-    private double length;
-    private double crewCapacity;
-    private double fuelCapacity;
-
-    public SpaceCraft() {
-    }
+    /**
+     *
+     */
+    Falcon_Shuttle(" This is the smallest ship, 2-3 crew capacity, low cargo and fast speed",3,10,5),
+    Discovery_Science ("mid-size, 3-5 crew capacity, medium cargo, average speed",5,20,10), 
+    Daedalus_Crusier("large size, 4-6 crew capacity, largo cargo, slow",6,30,15);
     
-    
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getWidth() {
-        return width;
-    }
-
-    public void setWidth(double width) {
-        this.width = width;
-    }
-
-    public double getLength() {
-        return length;
-    }
-
-    public void setLength(double length) {
-        this.length = length;
-    }
-
-    public double getCrewCapacity() {
-        return crewCapacity;
-    }
-
-    public void setCrewCapacity(double crewCapacity) {
-        this.crewCapacity = crewCapacity;
-    }
-
-    public double getFuelCapacity() {
-        return fuelCapacity;
-    }
-
-    public void setFuelCapacity(double fuelCapacity) {
-        this.fuelCapacity = fuelCapacity;
-    }
-
-    @Override
-    public String toString() {
-        return "SpaceCraft{" + "name=" + name + ", width=" + width + ", length=" + length + ", crewCapacity=" + crewCapacity + ", fuelCapacity=" + fuelCapacity + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 37 * hash + Objects.hashCode(this.name);
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.width) ^ (Double.doubleToLongBits(this.width) >>> 32));
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.length) ^ (Double.doubleToLongBits(this.length) >>> 32));
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.crewCapacity) ^ (Double.doubleToLongBits(this.crewCapacity) >>> 32));
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.fuelCapacity) ^ (Double.doubleToLongBits(this.fuelCapacity) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
+        private final String description;
+        private final int crewCapacity;
+        private final int lenght;
+        private final int width;
+        
+        SpaceCraft(String description,int crewCapacity, int lenght, int width){
+            this.description = description;
+            this.crewCapacity = crewCapacity;
+            this.lenght = lenght;
+            this.width = width;
         }
-        if (getClass() != obj.getClass()) {
-            return false;
+        public String getDescription(){
+            return this.description;
         }
-        final SpaceCraft other = (SpaceCraft) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
+        public int getCrewCapacity(){
+            return this.crewCapacity;
         }
-        if (Double.doubleToLongBits(this.width) != Double.doubleToLongBits(other.width)) {
-            return false;
+        public int getWidth(){
+            return this.width;
         }
-        if (Double.doubleToLongBits(this.length) != Double.doubleToLongBits(other.length)) {
-            return false;
+        public int getLenght(){
+            return this.lenght;
         }
-        if (Double.doubleToLongBits(this.crewCapacity) != Double.doubleToLongBits(other.crewCapacity)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.fuelCapacity) != Double.doubleToLongBits(other.fuelCapacity)) {
-            return false;
-        }
-        return true;
-    }
-    
-    
-    
-            
-    
 }

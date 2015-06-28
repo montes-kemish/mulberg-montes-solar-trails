@@ -15,6 +15,9 @@ public class Game implements Serializable {
     
     private String totalDiscoveries;
     private double noCrewMembers;
+    private Player player;
+    private Discovery discovery;
+    private RegularScene regularScene;
 
     public Game() {
     }
@@ -66,6 +69,30 @@ public class Game implements Serializable {
 
     public void setNoCrewMembers(double noCrewMembers) {
         this.noCrewMembers = noCrewMembers;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Discovery getDiscovery() {
+        return discovery;
+    }
+
+    public void setDiscovery(Discovery discovery) {
+        this.discovery = discovery;
+    }
+
+    public RegularScene getRegularScene() {
+        return regularScene;
+    }
+
+    public void setRegularScene(RegularScene regularScene) {
+        this.regularScene = regularScene;
     }
     
     
