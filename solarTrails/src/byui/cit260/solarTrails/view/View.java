@@ -11,8 +11,8 @@ import java.util.Scanner;
  *
  * @author silivrenwolf
  */
-public abstract class View implements ViewInterface {
-
+public abstract class View implements ViewInterface { //because of the realization relationship between View class and ViewInterface, the view implements literally the view interface
+                                                      //this is an abstract superclass because the method is incomplete the implementation is done by subclasses
      private String promptMessage;
      
      public View(String promptMessage) {
