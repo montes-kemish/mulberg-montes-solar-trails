@@ -18,6 +18,10 @@ public class Game implements Serializable {
     private Player player;
     private Discovery discovery;
     private RegularScene regularScene;
+    private SpaceCraft [] spaceCraft;
+    private Map map;
+    private StorageTanks inventory;
+    private String[] actors;
 
     public Game() {
     }
@@ -93,6 +97,38 @@ public class Game implements Serializable {
 
     public void setRegularScene(RegularScene regularScene) {
         this.regularScene = regularScene;
+    }
+
+    public SpaceCraft[] getSpaceCraft() {
+        return spaceCraft;
+    }
+
+    public void setSpaceCraft(SpaceCraft[] spaceCraft) {
+        this.spaceCraft = spaceCraft;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public StorageTanks getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(StorageTanks inventory) {
+        this.inventory = inventory;
+    }
+
+    public String[] getActors() {
+        return actors;
+    }
+
+    public void setActors(String[] actors) {
+        this.actors = actors;
     }
     
     

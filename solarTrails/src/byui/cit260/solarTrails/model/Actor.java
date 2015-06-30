@@ -14,6 +14,7 @@ import java.io.Serializable;
  */
 public enum Actor implements Serializable {
     
+    
     Healthie("He is an expert in health and will save many through new medicine"),
     Welthie("He is a rich man and will save many through new economic discoveries"),
     Foodie("He is a nutritian and will save many from hunger"),
@@ -24,7 +25,7 @@ public enum Actor implements Serializable {
     
     private final String description;
     private final Point coordinates;// I created a "import java.awt.Point;" to solve problem
-    
+    //create the location property
     
      Actor(String description) {
      this.description = description;

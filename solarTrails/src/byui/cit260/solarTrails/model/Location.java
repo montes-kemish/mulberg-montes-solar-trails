@@ -17,6 +17,7 @@ public class Location implements Serializable{
     private double row;
     private double column;
     private boolean visited;
+    private RegularScene scene;
 
     public Location() {
     }
@@ -79,6 +80,14 @@ public class Location implements Serializable{
             return false;
         }
         return true;
+    }
+
+    public RegularScene getScene() {
+        return scene;
+    }
+
+    public void setScene(RegularScene scene) {
+        this.scene = scene;
     }
     
     
