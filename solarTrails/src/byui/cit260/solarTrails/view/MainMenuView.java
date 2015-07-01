@@ -5,7 +5,9 @@
  */
 package byui.cit260.solarTrails.view;
 
+import byui.cit260.solarTrails.control.GameControl;
 import java.util.Scanner;
+import solartrails.SolarTrails;
 
 /**
  *
@@ -18,11 +20,11 @@ public class MainMenuView extends View {
             + "\n------------------------------------"
             + "\n| Main Menu                       |"
             + "\n------------------------------------"
-            + "\nG - Start Game"
+            + "\nN - Start New Game"
             + "\nH - Help"
             + "\nS - Save the Game"
-            + "\nL - Load Game"
-            + "\nE - Quit"
+            + "\nE - Start Existing Game"
+            + "\nQ - Quit"
             + "\n--------------------------------------");
     }
     
@@ -35,7 +37,7 @@ public class MainMenuView extends View {
         char choice = value.charAt(0);
         
          switch (choice) {
-            case 'G':
+            case 'N':
                 this.startNewGame();
                 break;
             case 'H':
@@ -44,7 +46,7 @@ public class MainMenuView extends View {
             case 'S':
                 this.saveGame();
                 break;
-            case 'L':
+            case 'E':
                 this.startExistingGame();
                 break;
             case 'Q':
@@ -63,7 +65,9 @@ public class MainMenuView extends View {
     
 
     private void startNewGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        GameControl.createNewGame(SolarTrails.getPlayer());
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();// this function will initiate the game menu after it has been created
     }
 
     private void startExistingGame() {

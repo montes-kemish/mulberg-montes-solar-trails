@@ -25,40 +25,7 @@ public class Game implements Serializable {
 
     public Game() {
     }
-
-    @Override
-    public String toString() {
-        return "Game{" + "totalDiscoveries=" + totalDiscoveries + ", noCrewMembers=" + noCrewMembers + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 17 * hash + Objects.hashCode(this.totalDiscoveries);
-        hash = 17 * hash + (int) (Double.doubleToLongBits(this.noCrewMembers) ^ (Double.doubleToLongBits(this.noCrewMembers) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Game other = (Game) obj;
-        if (!Objects.equals(this.totalDiscoveries, other.totalDiscoveries)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.noCrewMembers) != Double.doubleToLongBits(other.noCrewMembers)) {
-            return false;
-        }
-        return true;
-    }
     
-    
-
     public String getTotalDiscoveries() {
         return totalDiscoveries;
     }
@@ -129,6 +96,14 @@ public class Game implements Serializable {
 
     public void setActors(String[] actors) {
         this.actors = actors;
+    }
+
+    public void setInventory(StorageTanks[] inventory) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setSpaceCraft(SpaceCraft spaceCraft) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

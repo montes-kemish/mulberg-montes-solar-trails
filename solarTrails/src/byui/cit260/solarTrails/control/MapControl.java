@@ -5,10 +5,37 @@
  */
 package byui.cit260.solarTrails.control;
 
+import byui.cit260.solarTrails.model.Map;
+import byui.cit260.solarTrails.model.RegularScene;
+
 /**
  *
  * @author User
  */
 public class MapControl {
     
-}
+   public static  Map createMap() {
+       Map map = new Map(20, 20);
+       RegularScene[] scenes = createScenes();
+       
+       assignScenesToLocations(map, scenes);
+       
+       return map;
+   }
+   static void moveActorsToStartingLocation(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static void assignScenesToLocations(Map map, RegularScene[] scenes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static RegularScene[] createScenes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+ }
+    
+    
+
