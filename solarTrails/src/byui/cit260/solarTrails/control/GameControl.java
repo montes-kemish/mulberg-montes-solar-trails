@@ -9,6 +9,7 @@ import byui.cit260.solarTrails.model.Discovery;
 import byui.cit260.solarTrails.model.Game;
 import byui.cit260.solarTrails.model.Map;
 import byui.cit260.solarTrails.model.Player;
+import byui.cit260.solarTrails.model.RegularScene;
 import byui.cit260.solarTrails.model.SpaceCraft;
 import byui.cit260.solarTrails.model.StorageTanks;
 import solartrails.SolarTrails;
@@ -27,7 +28,12 @@ import solartrails.SolarTrails;
 
 
 public class GameControl {
+    private static Object Constants;
 
+    static void assignScenesToLocations(Map map, RegularScene[] scenes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+       
     public static void createNewGame(Player player) {
         Game game = new Game(); //create new Game
         SolarTrails.setCurrentGame(game); //allocate it in solar Trails
@@ -38,7 +44,7 @@ public class GameControl {
         StorageTanks[] inventory = GameControl.createInventory();//new class in control layer called inventory item?
         game.setInventory(inventory);
         
-       SpaceCraft spaceCraft;
+        SpaceCraft spaceCraft;
                
         Discovery discovery = new Discovery();
         game.setDiscovery(discovery); // Save discovery 
@@ -49,11 +55,52 @@ public class GameControl {
     }
                
   public static StorageTanks[] createInventory(){
-      System.out.println("***called createNewInventory in Gme Control***");
-          return null;
+      //create array list of inventory items called storage tanks on the game
+      
+      StorageTanks[] inventory = new StorageTanks[Constants.NUMBER_OF_INVENTORY_ITEMS];
+      
+      StorageTanks H2O = new StorageTanks();
+      water.setDescription("water");
+      H2O.setQuantityInStock(0);
+      H2O.setRequiredAmount(0);
+      inventory[Item.H20.ordinal()] = H2O;
+      
+      StorageTanks food = new StorageTanks();
+      food.setDescription("buffalo");
+      food.setQuantityInStock(0);
+      food.setRequiredAmount(0);
+      inventory[1] = food;
+      
+      StorageTanks O2 = new StorageTanks();
+      O2.setDescription("Oxygen");
+      O2.setQuantityInStock(0);
+      O2.setRequiredAmount(0);
+      inventory[2] = O2;
+      
+      StorageTanks H2 = new StorageTanks();
+      H2.setDescription("Hydrogen");
+      H2.setQuantityInStock(0);
+      H2.setRequiredAmount(0);
+      inventory[3] = H2;
+      
+      StorageTanks vaccume = new StorageTanks();
+      vaccume.setDescription("Spacial Vaccume");
+      vacuume.setQuantityInStock(0);
+      vaccume.setRequiredAmount(1);
+      inventory[4] = vaccume;
+      
+      
+     StorageTanks lens = new StorageTanks();
+      lens.setDescription("super lens");
+      lens.setQuantityInStock(0);
+      lens.setRequiredAmount(1);
+      inventory[5] = food;
+          
+      return inventory;
           
           
   }
-            
+     
+  
 }  
 

@@ -14,34 +14,72 @@ import java.io.Serializable;
 public class Map implements Serializable{
     
     //class Instances
-    private double rowCount;
-    private double columnCount;
-
+    private int noOfRows;
+    private int noOfColumns;
+    private Location[][] locations;
+    
+    
+    
     public Map() {
     }
 
-    public Map(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Map(int noOfRows, int noOfColums) {
+        if (noOfRows < 1 || noOfColums < 1){
+            System.out.println("The number of rows and columns must be > zero");
+            return;
+        }
+        this.noOfRows = noOfRows;
+        this.noOfColumns = noOfColumns;
+        
+        // create 2-D array for location objects
+        this.locations = new Location [noOfRows][noOfColumns];
+        
+        for (int row = 0; row<noOfRows; row++){
+            for (int column = 0; column < noOfColumns; column++){
+                
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
+                
+                locations[row][column] = location;
+            }
+               
+        }
+        
+     }
+
+    public int getNoOfRows() {
+        return noOfRows;
     }
+
+    public void setNoOfRows(int noOfRows) {
+        this.noOfRows = noOfRows;
+    }
+
+    public int getNoOfColumns() {
+        return noOfColumns;
+    }
+
+    public void setNoOfColumns(int noOfColumns) {
+        this.noOfColumns = noOfColumns;
+    }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
+    
+   
+    
+
     
     
-
-    public double getRowCount() {
-        return rowCount;
-    }
-
-    public void setRowCount(double rowCount) {
-        this.rowCount = rowCount;
-    }
-
-    public double getColumnCount() {
-        return columnCount;
-    }
-
-    public void setColumnCount(double columnCount) {
-        this.columnCount = columnCount;
-    }
-
+    
     @Override
     public String toString() {
         return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';

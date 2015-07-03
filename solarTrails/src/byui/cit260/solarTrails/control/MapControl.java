@@ -15,10 +15,12 @@ import byui.cit260.solarTrails.model.RegularScene;
 public class MapControl {
     
    public static  Map createMap() {
+       //create the map
        Map map = new Map(20, 20);
+      //create a list of different scenes of the game
        RegularScene[] scenes = createScenes();
-       
-       assignScenesToLocations(map, scenes);
+       //assign location to different scenes on the map
+       GameControl.assignScenesToLocations(map, scenes);
        
        return map;
    }

@@ -14,9 +14,16 @@ import java.io.Serializable;
 public class Discovery implements Serializable {
     
     private double maxWeight;
-    private double amountLoaded;
+    private double amountContainerLoaded;
     private double loadedWeight;
 
+    public Discovery(){
+        this.amountContainerLoaded = 0;
+        this.maxWeight = 1000;
+        this.loadedWeight = 0;
+        
+    }
+    
     public double getMaxWeight() {
         return maxWeight;
     }
@@ -25,12 +32,12 @@ public class Discovery implements Serializable {
         this.maxWeight = maxWeight;
     }
 
-    public double getAmountLoaded() {
-        return amountLoaded;
+    public double getAmountContainerLoaded() {
+        return amountContainerLoaded;
     }
 
-    public void setAmountLoaded(double amountLoaded) {
-        this.amountLoaded = amountLoaded;
+    public void setAmountContainerLoaded(double amountContainerLoaded) {
+        this.amountContainerLoaded = amountContainerLoaded;
     }
 
     public double getLoadedWeight() {
