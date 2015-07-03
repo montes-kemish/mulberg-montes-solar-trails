@@ -5,8 +5,12 @@
  */
 package byui.cit260.solarTrails.control;
 
+import byui.cit260.solarTrails.exceptions.MapControlException;
+import byui.cit260.solarTrails.model.Actor;
 import byui.cit260.solarTrails.model.Map;
 import byui.cit260.solarTrails.model.RegularScene;
+import java.awt.Point;
+import solartrails.SolarTrails;
 
 /**
  *
@@ -24,8 +28,15 @@ public class MapControl {
        
        return map;
    }
-   static void moveActorsToStartingLocation(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   
+   static void moveActorsToStartingLocation(Map map) throws MapControlException {
+        Actor[] actors = Actor.values();
+        
+        for (Actor actor: actors) {
+            Point coordinates = actor.getCoordinates();
+            MapControl.moveActorToLocation(actor, coordinates);
+           
+        }
     }
 
     private static void assignScenesToLocations(Map map, RegularScene[] scenes) {
@@ -34,6 +45,22 @@ public class MapControl {
 
     private static RegularScene[] createScenes() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    public static void moveActorToLocation(Actor actor, Point coordinates) 
+            throws MapControlException{
+        Map map = SolarTrails.getCurrentGame().getMap();
+        int newRow = coordinates.x-1;
+        int newColumn = coordinates.y-1;
+        
+        if(newRow<0 || newRow >= map.getNoOfRows()||newColumn <0 || newColumn >= map.getNoOfColumns()){
+            throw new MapControlException("Can't move ator to location "
+                    + coordinates.x + "," + coordinates.y
+                    + "because location is outside the bounds" );
+                    
+        }
+        
+        
+        
     }
 
     

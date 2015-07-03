@@ -27,51 +27,17 @@ public class SolarTrails {
     private static Player player = null; 
     
     public static void main(String[] args) {
-        Player playerOne = new Player();
-        
-        playerOne.setName("Fred Flintstone");
-        playerOne.setBestDiscoveries(9);
-        
-        String playerInfo = playerOne.toString();
-        System.out.println(playerInfo);
-        
-        
-        
-        
-        
-        
-        UnidentifiedObject unidentifiedObjectOne = new UnidentifiedObject();
-        
-        unidentifiedObjectOne.setDescription("rock");
-        unidentifiedObjectOne.setCoordinates("21,02");
-        unidentifiedObjectOne.setDiscoveries("Cure Cancer");
-        
-        String unidentifiedObjectInfo = unidentifiedObjectOne.toString();
-        System.out.println(unidentifiedObjectInfo); 
-        
-        Map mapOne = new Map();
-        
-        mapOne.setColumnCount(10);
-        mapOne.setRowCount(10);
-        
-        String mapInfo = mapOne.toString();
-        System.out.println(mapInfo);
-        
-        
-        Location locationOne = new Location();
-        
-        
-        locationOne.setColumn(2);
-        locationOne.setRow(5);
-        locationOne.setVisited(true);
-        
-        String locationInfo = locationOne.toString();
-        System.out.println(locationInfo);
-        
-        //create the start program view and start the program
-        
+       
         StartProgramView startProgramView = new StartProgramView(); 
-        startProgramView.startProgram();
+      try{
+          
+          startProgramView.display();
+          
+      }catch (Throwable te){
+          System.out.println(te.getMessage());
+          startProgramView.display();
+          
+      }
       
          
     }   
