@@ -6,11 +6,7 @@
 package solartrails;
 
 import byui.cit260.solarTrails.model.Game;
-import byui.cit260.solarTrails.model.Location;
-import byui.cit260.solarTrails.model.Map;
 import byui.cit260.solarTrails.model.Player;
-import byui.cit260.solarTrails.model.SpaceCraft;
-import byui.cit260.solarTrails.model.UnidentifiedObject;
 import byui.cit260.solarTrails.view.StartProgramView;
 
 /**

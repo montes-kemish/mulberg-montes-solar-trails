@@ -29,7 +29,8 @@ public class MapControl {
        return map;
    }
    
-   static void moveActorsToStartingLocation(Map map) throws MapControlException {
+   static void moveActorsToStartingLocation(Map map)
+           throws MapControlException {
         Actor[] actors = Actor.values();
         
         for (Actor actor: actors) {

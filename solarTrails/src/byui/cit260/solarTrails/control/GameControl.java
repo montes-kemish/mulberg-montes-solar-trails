@@ -5,6 +5,8 @@
  */
 package byui.cit260.solarTrails.control;
 
+import byui.cit260.solarTrails.exceptions.MapControlException;
+import byui.cit260.solarTrails.model.Constants.Item;
 import byui.cit260.solarTrails.model.Discovery;
 import byui.cit260.solarTrails.model.Game;
 import byui.cit260.solarTrails.model.Map;
@@ -34,7 +36,9 @@ public class GameControl {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
        
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player)
+            
+            throws MapControlException {
         Game game = new Game(); //create new Game
         SolarTrails.setCurrentGame(game); //allocate it in solar Trails
         
@@ -57,10 +61,10 @@ public class GameControl {
   public static StorageTanks[] createInventory(){
       //create array list of inventory items called storage tanks on the game
       
-      StorageTanks[] inventory = new StorageTanks[Constants.NUMBER_OF_INVENTORY_ITEMS];
+      StorageTanks[] inventory = new StorageTanks[Constants.Items.values().length];
       
       StorageTanks H2O = new StorageTanks();
-      water.setDescription("water");
+      H2O.setDescription("water");
       H2O.setQuantityInStock(0);
       H2O.setRequiredAmount(0);
       inventory[Item.H20.ordinal()] = H2O;
@@ -94,7 +98,7 @@ public class GameControl {
       lens.setDescription("super lens");
       lens.setQuantityInStock(0);
       lens.setRequiredAmount(1);
-      inventory[5] = food;
+      inventory[5] = lens;
           
       return inventory;
           

@@ -6,7 +6,10 @@
 package byui.cit260.solarTrails.view;
 
 import byui.cit260.solarTrails.control.GameControl;
+import byui.cit260.solarTrails.exceptions.MapControlException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import solartrails.SolarTrails;
 
 /**
@@ -65,9 +68,20 @@ public class MainMenuView extends View {
     
 
     private void startNewGame() {
-        GameControl.createNewGame(SolarTrails.getPlayer());
+       
+        
+        try {
+            GameControl.createNewGame(SolarTrails.getPlayer());
+            
+        } catch (MapControlException ex) {
+            Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }catch(Throwable te){
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            return;
+        }
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();// this function will initiate the game menu after it has been created
+            gameMenu.display();// this function will initiate the game menu after it has been created
     }
 
     private void startExistingGame() {
