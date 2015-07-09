@@ -16,7 +16,7 @@ public class RegularScene implements Serializable{
        
     public static void createScenes(){
         Game game = SolarTrails.getCurrentGame();
-        RegularScene[] scenes= new RegularScene[1];
+        RegularScene[] scenes= new RegularScene[SceneType.values().length];
        
         RegularScene startingScene = new RegularScene();
         startingScene.setDescription(
@@ -27,7 +27,7 @@ public class RegularScene implements Serializable{
         startingScene.setMapSymbol("ST");
         startingScene.setBlock(false);
         startingScene.setTravelTime(0);
-        scenes[0] = startingScene;
+        scenes[SceneType.start.ordinal()] = startingScene;
         
         RegularScene arrivingScene = new RegularScene();
         arrivingScene.setDescription(
@@ -38,8 +38,50 @@ public class RegularScene implements Serializable{
         arrivingScene.setMapSymbol("AU");
         arrivingScene.setBolcked(false);
         arrivingScene.setTravelTime(360);
-        scenes[1] = arrivingScene;
+        scenes[SceneType.uranus.ordinal()] = arrivingScene;
         
+        RegularScene fuelScene = new RegularScene();
+        fuelScene.setDescription("A place to load fuel to your Space Craft");
+        fuelScene.setMapSymbol("H2");
+        fuelScene.setBlock(false);
+        fuelScene.setTravelTime(0);
+        scenes[SceneType.fuel.ordinal()] = fuelScene;
+        
+        RegularScene waterScene = new RegularScene();
+       waterScene.setDescription("A place to load water to your Space Craft");
+        waterScene.setMapSymbol("H2O");
+        waterScene.setBlock(false);
+        waterScene.setTravelTime(0);
+        scenes[SceneType.water.ordinal()] = waterScene;
+        
+        RegularScene foodScene = new RegularScene();
+        foodScene.setDescription("A place to load food to your Space Craft");
+       foodScene.setMapSymbol("FD");
+        foodScene.setBlock(false);
+        foodScene.setTravelTime(0);
+        scenes[SceneType.food.ordinal()] = foodScene;
+        
+        RegularScene objectScene = new RegularScene();
+        objectScene.setDescription("The unidentified object that must be interpreted, use the lens"
+                + "to solve the problems and find new discoveries");
+        objectScene.setMapSymbol("UO");
+        objectScene.setBlock(false);
+        objectScene.setTravelTime(0);
+        scenes[SceneType.object.ordinal()] = objectScene;
+        
+        RegularScene spaceScene = new RegularScene();
+        spaceScene.setDescription("simple Space");
+        spaceScene.setMapSymbol("S");
+        spaceScene.setBlock(false);
+        spaceScene.setTravelTime(0);
+        scenes[SceneType.space.ordinal()] = spaceScene;
+        
+        RegularScene outerdarknessScene = new RegularScene();
+        outerdarknessScene.setDescription("Blocked area");
+        outerdarknessScene.setMapSymbol("OD");
+        outerdarknessScene.setBlock(true);
+        outerdarknessScene.setTravelTime(0);
+        scenes[SceneType.outerdarkness.ordinal()] = outerdarknessScene;
         
         
     }
