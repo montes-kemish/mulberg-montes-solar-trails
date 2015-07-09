@@ -18,8 +18,9 @@ public class Location implements Serializable{
     private double column;
     private boolean visited;
     private RegularScene scene;
-    private ArrayList<Actor> actors;
-   
+    private Actor actors;
+
+       
     public Location() {
     }
     
@@ -90,7 +91,13 @@ public class Location implements Serializable{
     public void setScene(RegularScene scene) {
         this.scene = scene;
     }
-    
+    public Actor getActors() {
+        return actors;
+    }
+
+    public void setActors(Actor actors) {
+        this.actors = actors;
+    }
     
         
 }

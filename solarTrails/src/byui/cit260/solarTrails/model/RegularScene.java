@@ -14,10 +14,11 @@ import solartrails.SolarTrails;
  */
 public class RegularScene implements Serializable{
        
-    public static RegularScene[] createScenes(){
+    public static void createScenes(){
         Game game = SolarTrails.getCurrentGame();
-        RegularScene[] scenes= new RegularScene[SceneType.values().lenght];
-        RegularScene starting Scene = new RegularScene();
+        RegularScene[] scenes= new RegularScene[1];
+       
+        RegularScene startingScene = new RegularScene();
         startingScene.setDescription(
         "\nEarth as it has been known, "
                 + "a new discovery has been found in Uranus"
@@ -26,10 +27,10 @@ public class RegularScene implements Serializable{
         startingScene.setMapSymbol("ST");
         startingScene.setBlock(false);
         startingScene.setTravelTime(0);
-        scenes[SceneType.start.ordinal()] = startingScene;
+        scenes[0] = startingScene;
         
         RegularScene arrivingScene = new RegularScene();
-        finishScene.setDescription(
+        arrivingScene.setDescription(
         "\nYou have arrived at Uranus, the mission is now to "
                 + "identify the object, inspect it with the aid of the specialists, gather "
                 + "food, Oxygen, and Fuel to come back to EArth"
@@ -37,10 +38,30 @@ public class RegularScene implements Serializable{
         arrivingScene.setMapSymbol("AU");
         arrivingScene.setBolcked(false);
         arrivingScene.setTravelTime(360);
-        RegularScenes[SceneType.arriving.ordinal()] = arrivingScene;
+        scenes[1] = arrivingScene;
         
         
         
+    }
+
+    private void setDescription(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void setMapSymbol(String st) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void setBlock(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void setTravelTime(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void setBolcked(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

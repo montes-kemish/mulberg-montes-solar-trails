@@ -30,8 +30,7 @@ import solartrails.SolarTrails;
 
 
 public class GameControl {
-    private static Object Constants;
-
+   
     static void assignScenesToLocations(Map map, RegularScene[] scenes) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -48,8 +47,9 @@ public class GameControl {
         StorageTanks[] inventory = GameControl.createInventory();//new class in control layer called inventory item?
         game.setInventory(inventory);
         
-        SpaceCraft spaceCraft;
-               
+        //should I create the Ship if it's an enumeration list   
+          
+        
         Discovery discovery = new Discovery();
         game.setDiscovery(discovery); // Save discovery 
         
@@ -61,13 +61,13 @@ public class GameControl {
   public static StorageTanks[] createInventory(){
       //create array list of inventory items called storage tanks on the game
       
-      StorageTanks[] inventory = new StorageTanks[Constants.Items.values().length];
+      StorageTanks[] inventory = new StorageTanks[5];
       
       StorageTanks H2O = new StorageTanks();
       H2O.setDescription("water");
       H2O.setQuantityInStock(0);
       H2O.setRequiredAmount(0);
-      inventory[Item.H20.ordinal()] = H2O;
+      inventory[0] = H2O;
       
       StorageTanks food = new StorageTanks();
       food.setDescription("buffalo");
@@ -89,7 +89,7 @@ public class GameControl {
       
       StorageTanks vaccume = new StorageTanks();
       vaccume.setDescription("Spacial Vaccume");
-      vacuume.setQuantityInStock(0);
+      vaccume.setQuantityInStock(0);
       vaccume.setRequiredAmount(1);
       inventory[4] = vaccume;
       
