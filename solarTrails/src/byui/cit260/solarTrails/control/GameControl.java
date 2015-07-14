@@ -13,7 +13,7 @@ import byui.cit260.solarTrails.model.Map;
 import byui.cit260.solarTrails.model.Player;
 import byui.cit260.solarTrails.model.RegularScene;
 import byui.cit260.solarTrails.model.SpaceCraft;
-import byui.cit260.solarTrails.model.StorageTanks;
+import byui.cit260.solarTrails.model.InventoryItem;
 import solartrails.SolarTrails;
 
 /**
@@ -44,7 +44,7 @@ public class GameControl {
         game.setPlayer(player); //save player in game
         
         //create the inventory list and save the game
-        StorageTanks[] inventory = GameControl.createInventory();//new class in control layer called inventory item?
+        InventoryItem[] inventory = GameControl.createInventory();//new class in control layer called inventory item?
         game.setInventory(inventory);
         
         //should I create the Ship if it's an enumeration list   
@@ -58,43 +58,43 @@ public class GameControl {
         MapControl.moveActorsToStartingLocation(map);
     }
                
-  public static StorageTanks[] createInventory(){
+  public static InventoryItem[] createInventory(){
       //create array list of inventory items called storage tanks on the game
       
-      StorageTanks[] inventory = new StorageTanks[5];
+      InventoryItem[] inventory = new InventoryItem[5];
       
-      StorageTanks H2O = new StorageTanks();
+      InventoryItem H2O = new InventoryItem();
       H2O.setDescription("water");
       H2O.setQuantityInStock(0);
       H2O.setRequiredAmount(0);
       inventory[0] = H2O;
       
-      StorageTanks food = new StorageTanks();
+      InventoryItem food = new InventoryItem();
       food.setDescription("buffalo");
       food.setQuantityInStock(0);
       food.setRequiredAmount(0);
       inventory[1] = food;
       
-      StorageTanks O2 = new StorageTanks();
+      InventoryItem O2 = new InventoryItem();
       O2.setDescription("Oxygen");
       O2.setQuantityInStock(0);
       O2.setRequiredAmount(0);
       inventory[2] = O2;
       
-      StorageTanks H2 = new StorageTanks();
+      InventoryItem H2 = new InventoryItem();
       H2.setDescription("Hydrogen");
       H2.setQuantityInStock(0);
       H2.setRequiredAmount(0);
       inventory[3] = H2;
       
-      StorageTanks vaccume = new StorageTanks();
+      InventoryItem vaccume = new InventoryItem();
       vaccume.setDescription("Spacial Vaccume");
       vaccume.setQuantityInStock(0);
       vaccume.setRequiredAmount(1);
       inventory[4] = vaccume;
       
       
-     StorageTanks lens = new StorageTanks();
+     InventoryItem lens = new InventoryItem();
       lens.setDescription("super lens");
       lens.setQuantityInStock(0);
       lens.setRequiredAmount(1);
@@ -104,6 +104,11 @@ public class GameControl {
           
           
   }
+
+    public static InventoryItem[] getSortedInventoryList() {
+        System.out.println("\n getSortedInventoryList stubFunction called***");
+        return null;
+    }
      
   
 }  

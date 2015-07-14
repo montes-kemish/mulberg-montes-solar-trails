@@ -17,5 +17,8 @@ public enum SceneType {
     uranus,
     space,
     outerdarkness,
+    mars,
+    saturn,
+    jupiter,
     object;
 }

@@ -23,7 +23,7 @@ public class RegularScene implements Serializable{
         "\nEarth as it has been known, "
                 + "a new discovery has been found in Uranus"
                 + "and you will lead a Crew of scientists to "
-                + "an Unidentified Object, through the solar system");
+                + "an Unidentified Object, through the solar system");  
         startingScene.setMapSymbol("ST");
         startingScene.setBlock(false);
         startingScene.setTravelTime(0);

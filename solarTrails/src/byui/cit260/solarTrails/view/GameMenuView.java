@@ -5,6 +5,9 @@
  */
 package byui.cit260.solarTrails.view;
 
+import byui.cit260.solarTrails.control.GameControl;
+import byui.cit260.solarTrails.model.InventoryItem;
+
 /**
  *
  * @author User
@@ -16,12 +19,17 @@ public class GameMenuView extends  View{
             + "\n------------------------------------"
             + "\n|Game Menu                      |"
             + "\n------------------------------------"
-            + "\nC - Crew Status"
+            + "\nM - View Map  "  
+            + "\nC - View Contents on Location  " 
+            + "\nE - Estimate Resource Needed  "
+            + "\nW - Crew Status"
             + "\nI - Inventory Situation"
             + "\nS - Ship Situation"
             + "\nT - Travel"
-            + "\nF - Harvesting Fuel"
-            + "\nH - Hunting for Food and Water"
+            + "\nF - Harvest Resource"
+            + "\nL - Launch Ship"   
+            + "\nP - Pack Ship    "
+            + "\nI - Inspect Element   "
             + "\nQ - Quit"
             + "\n--------------------------------------");
     }
@@ -34,11 +42,19 @@ value = value.toUpperCase();
 char choice = value.charAt(0);
 
  switch (choice) {
+     
+            case 'M':   
+                this.viewMap();
             case 'C':
-                this.crewStatus();
+                this.viewContentsOnLocation();
+            case 'N':    
+                this.estimateResourceNeeded();
                 break;
+            case 'W':
+                this.crewStatus();
+                
             case 'I':
-                this.inventory();
+                this.inventorySituation();
                 break;
             case 'S':
                 this.shipSituation();
@@ -47,10 +63,19 @@ char choice = value.charAt(0);
                 this.travel();
                 break;
             case 'F':
-                this.harvestFuel();
+                this.harvestResource();
+                break;
+            case 'L':
+                this.launchShip();
+                break;
+            case 'P':
+                this.packShip();
+                break;
+            case 'E':
+                this.inspectElement();
                 break;
             case 'H':
-                this.huntingFW();
+                this.help();
                 break;
             case 'Q':
                 return true; // boolean function 
@@ -65,8 +90,21 @@ char choice = value.charAt(0);
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void inventory() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void inventorySituation() {
+        InventoryItem[] inventory = GameControl.getSortedInventoryList();
+        System.out.println("\nList of Inventory Items");
+        System.out.println("Description" + "\t" +
+         "Required" + "\t"
+        + "in Stock");
+        
+        for(InventoryItem inventoryItem: inventory){
+            
+            System.out.println(inventoryItem.getStorageType() + "\t   " + 
+                    inventoryItem.getRequiredQuantity() + "\t" +
+                    inventoryItem.getQuantityInStock());
+        }
+        
+        
     }
 
     private void shipSituation() {
@@ -77,12 +115,38 @@ char choice = value.charAt(0);
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void harvestFuel() {
+    private void harvestResource() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void huntingFW() {
+    private void launchShip() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    private void packShip() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void inspectElement() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void viewMap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void viewContentsOnLocation() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void estimateResourceNeeded() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void help() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 
 }

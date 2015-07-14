@@ -11,19 +11,19 @@ import java.util.Objects;
  *
  * @author angelamulberg
  */
-public class StorageTanks implements Serializable {
+public class InventoryItem implements Serializable {
 
 private String storageType;
 private double quantityInStock;
 private double requiredQuantity;
 private Container container;
 
-    public StorageTanks() {
+    public InventoryItem() {
     }
 
     @Override
     public String toString() {
-        return "StorageTanks{" + "storageType=" + storageType + ", quantityInStock=" + quantityInStock + ", requiredQuantity=" + requiredQuantity + '}';
+        return "InventoryItem{" + "storageType=" + storageType + ", quantityInStock=" + quantityInStock + ", requiredQuantity=" + requiredQuantity + '}';
     }
 
     @Override
@@ -43,7 +43,7 @@ private Container container;
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final StorageTanks other = (StorageTanks) obj;
+        final InventoryItem other = (InventoryItem) obj;
         if (!Objects.equals(this.storageType, other.storageType)) {
             return false;
         }

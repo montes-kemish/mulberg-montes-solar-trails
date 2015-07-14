@@ -20,7 +20,7 @@ public class Game implements Serializable {
     private RegularScene regularScene;
     private SpaceCraft [] spaceCraft;
     private Map map;
-    private StorageTanks inventory;
+    private InventoryItem inventory;
     private String[] actors;
 
     public Game() {
@@ -82,11 +82,11 @@ public class Game implements Serializable {
         this.map = map;
     }
 
-    public StorageTanks getInventory() {
+    public InventoryItem getInventory() {
         return inventory;
     }
 
-    public void setInventory(StorageTanks inventory) {
+    public void setInventory(InventoryItem inventory) {
         this.inventory = inventory;
     }
 
@@ -98,7 +98,7 @@ public class Game implements Serializable {
         this.actors = actors;
     }
 
-    public void setInventory(StorageTanks[] inventory) {
+    public void setInventory(InventoryItem[] inventory) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
