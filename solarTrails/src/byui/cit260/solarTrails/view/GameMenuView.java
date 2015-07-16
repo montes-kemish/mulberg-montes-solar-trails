@@ -99,7 +99,7 @@ char choice = value.charAt(0);
         
         for(InventoryItem inventoryItem: inventory){
             
-            System.out.println(inventoryItem.getStorageType() + "\t   " + 
+            System.out.println(inventoryItem.getDescription() + "\t   " + 
                     inventoryItem.getRequiredQuantity() + "\t" +
                     inventoryItem.getQuantityInStock());
         }

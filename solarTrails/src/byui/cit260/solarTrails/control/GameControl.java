@@ -14,6 +14,7 @@ import byui.cit260.solarTrails.model.Player;
 import byui.cit260.solarTrails.model.RegularScene;
 import byui.cit260.solarTrails.model.SpaceCraft;
 import byui.cit260.solarTrails.model.InventoryItem;
+import byui.cit260.solarTrails.model.InventoryList;
 import solartrails.SolarTrails;
 
 /**
@@ -63,42 +64,37 @@ public class GameControl {
       
       InventoryItem[] inventory = new InventoryItem[5];
       
-      InventoryItem H2O = new InventoryItem();
-      H2O.setDescription("water");
-      H2O.setQuantityInStock(0);
-      H2O.setRequiredAmount(0);
-      inventory[0] = H2O;
+      InventoryItem water = new InventoryItem();
+      water.setDescription("water");
+      water.setQuantityInStock(0);
+      water.setRequiredAmount(0);
+      inventory[InventoryList.water.ordinal()] = water;
       
       InventoryItem food = new InventoryItem();
       food.setDescription("buffalo");
       food.setQuantityInStock(0);
       food.setRequiredAmount(0);
-      inventory[1] = food;
+      inventory[InventoryList.food.ordinal()] = food;
       
-      InventoryItem O2 = new InventoryItem();
-      O2.setDescription("Oxygen");
-      O2.setQuantityInStock(0);
-      O2.setRequiredAmount(0);
-      inventory[2] = O2;
-      
-      InventoryItem H2 = new InventoryItem();
-      H2.setDescription("Hydrogen");
-      H2.setQuantityInStock(0);
-      H2.setRequiredAmount(0);
-      inventory[3] = H2;
+           
+      InventoryItem fuel = new InventoryItem();
+      fuel.setDescription("Hydrogen");
+      fuel.setQuantityInStock(0);
+      fuel.setRequiredAmount(0);
+      inventory[InventoryList.fuel.ordinal()] = fuel;
       
       InventoryItem vaccume = new InventoryItem();
       vaccume.setDescription("Spacial Vaccume");
       vaccume.setQuantityInStock(0);
       vaccume.setRequiredAmount(1);
-      inventory[4] = vaccume;
+      inventory[InventoryList.vaccume.ordinal()] = vaccume;
       
       
      InventoryItem lens = new InventoryItem();
       lens.setDescription("super lens");
       lens.setQuantityInStock(0);
       lens.setRequiredAmount(1);
-      inventory[5] = lens;
+      inventory[InventoryList.lens.ordinal()] = lens;
           
       return inventory;
           
@@ -106,9 +102,25 @@ public class GameControl {
   }
 
     public static InventoryItem[] getSortedInventoryList() {
-        System.out.println("\n getSortedInventoryList stubFunction called***");
+        
+        InventoryItem InventoryList = SolarTrails.getCurrentGame().getInventory();
+        //THis sorted function is a good idea but it may not be the most relevant frot he project
+        //InventoryItem[] inventoryList = originalInventoryList.clone();
+         
+       // for(int i = 0; i<inventoryList.length-1;
+        //        i++){for (int j = 0; j< inventoryList.length-1-i; j++){
+        //            if (inventoryList[j].getDescription().compareToIgnoreCase(inventoryList[j+1].getDescription()) >0){
+         //              tempInventoryItem = InventoryList[j];
+          //             InventoryList[j] = inventoryList[j+1];
+           //            inventoryList[j+1] = tempInventoryItem;
+              //}
+              //}
+              //}
         return null;
+        
+       
     }
+
      
   
 }  
