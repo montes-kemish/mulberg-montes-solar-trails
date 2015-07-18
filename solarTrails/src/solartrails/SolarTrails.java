@@ -23,6 +23,13 @@ public class SolarTrails {
     private static Player player = null; 
     
     public static void main(String[] args) {
+        
+        Player playerOne = new Player();
+        playerOne.setName("Ksh");
+        playerOne.setBestTime(7.00);
+        
+        String playerInfo = playerOne.toString();
+        System.out.println(playerInfo);
        
         StartProgramView startProgramView = new StartProgramView(); 
       try{

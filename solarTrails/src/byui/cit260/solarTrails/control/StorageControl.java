@@ -12,24 +12,18 @@ package byui.cit260.solarTrails.control;
 public class StorageControl {
        
     public long calcFoodRequired(long inventoryItem, long noPeople, long dailyAmountRequired) {
-        long distance = 14;
-        long shipCapacity = 1000;
+        long distance = 360;
+        long shipCapacity = 20000;
         noPeople = 3;
         
       if (noPeople < 0) {
               return -1;
     }
-      if (distance <0) {
-              return -1;
-    }
-      if (shipCapacity <0) {
-              return -1;
-    }
+            
+      long foodNeeded = distance*dailyAmountRequired*noPeople;
+       
       
-      long foodPerPerson = 5;
-      long foodCapsulesNeeded = (noPeople * 5 * distance);
-      
-      return foodCapsulesNeeded;
+      return foodNeeded;
               
     }
     

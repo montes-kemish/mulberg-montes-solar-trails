@@ -6,6 +6,7 @@
 package byui.cit260.solarTrails.control;
 
 import byui.cit260.solarTrails.exceptions.MapControlException;
+import byui.cit260.solarTrails.model.Actor;
 import byui.cit260.solarTrails.model.Constants.Item;
 import byui.cit260.solarTrails.model.Discovery;
 import byui.cit260.solarTrails.model.Game;
@@ -15,6 +16,8 @@ import byui.cit260.solarTrails.model.RegularScene;
 import byui.cit260.solarTrails.model.SpaceCraft;
 import byui.cit260.solarTrails.model.InventoryItem;
 import byui.cit260.solarTrails.model.InventoryList;
+import java.util.Collections;
+import java.util.List;
 import solartrails.SolarTrails;
 
 /**
@@ -101,24 +104,21 @@ public class GameControl {
           
   }
 
-    public static InventoryItem[] getSortedInventoryList() {
+    public static Actor[] getSortedActorList() {
+        String[] actor = SolarTrails.getCurrentGame().getActors();
+        Collections.sort(null);
         
-        InventoryItem InventoryList = SolarTrails.getCurrentGame().getInventory();
-        //THis sorted function is a good idea but it may not be the most relevant frot he project
-        //InventoryItem[] inventoryList = originalInventoryList.clone();
-         
-       // for(int i = 0; i<inventoryList.length-1;
-        //        i++){for (int j = 0; j< inventoryList.length-1-i; j++){
-        //            if (inventoryList[j].getDescription().compareToIgnoreCase(inventoryList[j+1].getDescription()) >0){
-         //              tempInventoryItem = InventoryList[j];
-          //             InventoryList[j] = inventoryList[j+1];
-           //            inventoryList[j+1] = tempInventoryItem;
-              //}
-              //}
-              //}
+        
         return null;
+        //InventoryItem[] inventoryList = SolarTrails.getCurrentGame().getInventory();
+        
         
        
+       
+    }
+
+    public static InventoryItem[] getSortedInventoryList() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
      

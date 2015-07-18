@@ -12,21 +12,21 @@ import java.util.Objects;
 public class Player implements Serializable{
 
 private String name;
-private double bestDiscoveries;
+private double bestTime;
 
     public Player() {
     }
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", bestDiscoveries=" + bestDiscoveries + '}';
+        return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
     }
     
     @Override
     public int hashCode() {
         int hash = 3;
         hash = 59 * hash + Objects.hashCode(this.name);
-        hash = 59 * hash + (int) (Double.doubleToLongBits(this.bestDiscoveries) ^ (Double.doubleToLongBits(this.bestDiscoveries) >>> 32));
+        hash = 59 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
         return hash;
     }
 
@@ -42,7 +42,7 @@ private double bestDiscoveries;
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.bestDiscoveries) != Double.doubleToLongBits(other.bestDiscoveries)) {
+        if (Double.doubleToLongBits(this.bestTime) != Double.doubleToLongBits(other.bestTime)) {
             return false;
         }
         return true;
@@ -58,12 +58,12 @@ private double bestDiscoveries;
         this.name = name;
     }
 
-    public double getBestDiscoveries() {
-        return bestDiscoveries;
+    public double getBestTime() {
+        return bestTime;
     }
 
-    public void setBestDiscoveries(double bestDiscoveries) {
-        this.bestDiscoveries = bestDiscoveries;
+    public void setBestTime(double bestTime) {
+        this.bestTime = bestTime;
     }
 
 }

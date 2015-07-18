@@ -6,6 +6,7 @@
 package byui.cit260.solarTrails.view;
 
 import byui.cit260.solarTrails.control.GameControl;
+import byui.cit260.solarTrails.model.Actor;
 import byui.cit260.solarTrails.model.InventoryItem;
 
 /**
@@ -86,8 +87,15 @@ char choice = value.charAt(0);
          return false;
     }
 
+    @SuppressWarnings("empty-statement")
     private void crewStatus() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       Actor[] actors = GameControl.getSortedActorList();
+       System.out.println("\nList of Actors in alphabetical orcer");
+       
+        for(Actor actor: actors)
+            System.out.println(actor.getCoordinates() + "\t"
+            + actor.getDescription());
+        {}
     }
 
     private void inventorySituation() {
