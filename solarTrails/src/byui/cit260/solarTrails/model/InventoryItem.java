@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -17,6 +17,7 @@ private String storageType;
 private double quantityInStock;
 private double requiredQuantity;
 private Container container;
+private String description;
 
     public InventoryItem() {
     }
@@ -82,12 +83,20 @@ private Container container;
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void setRequiredAmount(int i) {
+    public String getDescription() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public String getDescription() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
+    public void setQuantityInStock(double quantityInStock) {
+        this.quantityInStock = quantityInStock;
+    }
+
+    public void setRequiredQuantity(double requiredQuantity) {
+        this.requiredQuantity = requiredQuantity;
     }
     
     

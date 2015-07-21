@@ -6,6 +6,7 @@
 package byui.cit260.solarTrails.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 /**
  *
@@ -16,7 +17,7 @@ public class Game implements Serializable {
     private String totalDiscoveries;
     private double noCrewMembers;
     private Player player;
-    private Discovery discovery;
+   //Discovey was deleted
     private RegularScene regularScene;
     private SpaceCraft [] spaceCraft;
     private Map map;
@@ -50,13 +51,7 @@ public class Game implements Serializable {
         this.player = player;
     }
 
-    public Discovery getDiscovery() {
-        return discovery;
-    }
-
-    public void setDiscovery(Discovery discovery) {
-        this.discovery = discovery;
-    }
+   
 
     public RegularScene getRegularScene() {
         return regularScene;
@@ -104,6 +99,61 @@ public class Game implements Serializable {
 
     public void setSpaceCraft(SpaceCraft spaceCraft) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 29 * hash + Objects.hashCode(this.totalDiscoveries);
+        hash = 29 * hash + (int) (Double.doubleToLongBits(this.noCrewMembers) ^ (Double.doubleToLongBits(this.noCrewMembers) >>> 32));
+        hash = 29 * hash + Objects.hashCode(this.player);
+        hash = 29 * hash + Objects.hashCode(this.regularScene);
+        hash = 29 * hash + Arrays.deepHashCode(this.spaceCraft);
+        hash = 29 * hash + Objects.hashCode(this.map);
+        hash = 29 * hash + Objects.hashCode(this.inventory);
+        hash = 29 * hash + Arrays.deepHashCode(this.actors);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Game other = (Game) obj;
+        if (!Objects.equals(this.totalDiscoveries, other.totalDiscoveries)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.noCrewMembers) != Double.doubleToLongBits(other.noCrewMembers)) {
+            return false;
+        }
+        if (!Objects.equals(this.player, other.player)) {
+            return false;
+        }
+        if (!Objects.equals(this.regularScene, other.regularScene)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.spaceCraft, other.spaceCraft)) {
+            return false;
+        }
+        if (!Objects.equals(this.map, other.map)) {
+            return false;
+        }
+        if (!Objects.equals(this.inventory, other.inventory)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.actors, other.actors)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Game{" + "totalDiscoveries=" + totalDiscoveries + ", noCrewMembers=" + noCrewMembers + ", player=" + player + ", regularScene=" + regularScene + ", spaceCraft=" + spaceCraft + ", map=" + map + ", inventory=" + inventory + ", actors=" + actors + '}';
     }
     
     

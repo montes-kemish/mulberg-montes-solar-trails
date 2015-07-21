@@ -5,6 +5,7 @@
  */
 package solartrails;
 
+import byui.cit260.solarTrails.model.Actor;
 import byui.cit260.solarTrails.model.Game;
 import byui.cit260.solarTrails.model.Player;
 import byui.cit260.solarTrails.view.StartProgramView;
@@ -31,6 +32,10 @@ public class SolarTrails {
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
        
+       String actorInfo = Actor.Adventurie.getDescription();
+       System.out.println(actorInfo);
+       
+        
         StartProgramView startProgramView = new StartProgramView(); 
       try{
           

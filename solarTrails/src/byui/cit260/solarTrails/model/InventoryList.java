@@ -16,5 +16,31 @@ public enum InventoryList {
     food,
     vaccume,
     lens;
+
+    @Override
+    public String toString() {
+        return "InventoryList{" + '}';
+    }
+
+    public static InventoryList getWater() {
+        return water;
+    }
+
+    public static InventoryList getFuel() {
+        return fuel;
+    }
+
+    public static InventoryList getFood() {
+        return food;
+    }
+
+    public static InventoryList getVaccume() {
+        return vaccume;
+    }
+
+    public static InventoryList getLens() {
+        return lens;
+    }
+    
     
 }

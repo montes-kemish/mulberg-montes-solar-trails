@@ -50,5 +50,11 @@ public enum SpaceCraft implements Serializable {
     public double getMaxWeightCapacity() {
         return maxWeightCapacity;
     }
+
+    @Override
+    public String toString() {
+        return "SpaceCraft{" + "description=" + description + ", crewCapacity=" + crewCapacity + ", lenght=" + lenght + ", width=" + width + ", maxWeightCapacity=" + maxWeightCapacity + '}';
+    }
+    
         
 }

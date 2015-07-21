@@ -21,4 +21,11 @@ public enum SceneType {
     saturn,
     jupiter,
     object;
+
+    @Override
+    public String toString() {
+        return "SceneType{" + '}';
+    }
+    
+    
 }

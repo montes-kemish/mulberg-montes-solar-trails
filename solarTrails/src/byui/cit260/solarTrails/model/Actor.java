@@ -29,14 +29,22 @@ public enum Actor implements Serializable {
     
      Actor(String description) {
      this.description = description;
-      coordinates = new Point (1,1);
+      coordinates = new Point (0,0);
    
 }
             
     public String getDescription(){
     return description;
 }
-public Point getCoordinates(){
+    public Point getCoordinates(){
     return coordinates;
+    
 }
+
+    @Override
+    public String toString() {
+        return "Actor{" + "description=" + description + ", coordinates=" + coordinates + '}';
+    }
+    
+    
 }
