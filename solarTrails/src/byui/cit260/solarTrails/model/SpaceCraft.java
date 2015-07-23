@@ -12,15 +12,12 @@ import java.util.Objects;
  *
  * @author User Missig the Fuel Capacity fixed number, first define, then develop
  */
-public enum SpaceCraft implements Serializable {
+public class SpaceCraft implements Serializable {
     
     /**
      *
      */
-    Falcon_Shuttle(" This is the smallest ship, 2-3 crew capacity, low cargo and fast speed",3,10,5,1000),
-    Discovery_Science ("mid-size, 3-5 crew capacity, medium cargo, average speed",5,20,10,2000), 
-    Daedalus_Crusier("large size, 4-6 crew capacity, largo cargo, slow",6,30,15,3000);
-    
+       
         private final String description;
         private final int crewCapacity;
         private final int lenght;

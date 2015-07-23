@@ -5,6 +5,8 @@
  */
 package byui.cit260.solarTrails.view;
 
+import byui.cit260.solarTrails.control.GameControl;
+import byui.cit260.solarTrails.model.InventoryItem;
 import java.util.Scanner;
 
 /**
@@ -32,10 +34,7 @@ public class PackShipView extends View {
 
    public void packShipView(){
    }
-         
-     
-        
-        public double confirmDistance(){
+         public double confirmDistance(){
             boolean valid = false;
             int daysToTravel = 0;
             Scanner keyboard = new Scanner(System.in);
@@ -59,10 +58,6 @@ public class PackShipView extends View {
         return daysToTravel;
         
     }
-       
-         
-         
-         
         public double getFoodRequired(){
         boolean valid = false; 
         int foodRequired = 0;
@@ -81,16 +76,11 @@ public class PackShipView extends View {
                 continue;//continue with the while loop
             }
           break;
-        }
-      
-        
-        
+        }      
         return foodRequired;
         
     }
-       
-       
-    public double getFuelRequired(){
+      public double getFuelRequired(){
         boolean valid = false; 
         int fuelRequired = 0;
         Scanner keyboard = new Scanner(System.in);
@@ -109,10 +99,7 @@ public class PackShipView extends View {
           break;
         }
          
-      
-        
-        
-        return fuelRequired;
+       return fuelRequired;
     }
     
     public double getWaterRequired(){
@@ -132,15 +119,23 @@ public class PackShipView extends View {
                 continue;//continue with the while loop
             }
           break;
-        }
-         
-      
-        
-        
-        return waterRequired;
+        }  return waterRequired;
     }
-
-    
+    //display Inventory Listn 
+        public void getInventoryList(){
+        InventoryItem[] inventory = GameControl.getSortedInventoryList();
+        System.out.println("\nList of Inventory Items");
+        System.out.println("Description" + "\t" +
+         "Required" + "\t"
+        + "in Stock");
+        
+        for(InventoryItem inventoryItem: inventory){
+            
+            System.out.println(inventoryItem.getDescription() + "\t   " + 
+                    inventoryItem.getRequiredQuantity() + "\t" +
+                    inventoryItem.getQuantityInStock());
+        }
+        }
     
     
     @Override

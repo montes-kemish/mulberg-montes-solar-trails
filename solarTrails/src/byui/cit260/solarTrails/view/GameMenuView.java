@@ -6,8 +6,11 @@
 package byui.cit260.solarTrails.view;
 
 import byui.cit260.solarTrails.control.GameControl;
+import byui.cit260.solarTrails.control.ShipControl;
 import byui.cit260.solarTrails.model.Actor;
 import byui.cit260.solarTrails.model.InventoryItem;
+import static javax.management.Query.value;
+import solartrails.SolarTrails;
 
 /**
  *
@@ -132,7 +135,10 @@ char choice = value.charAt(0);
     }
 
     private void packShip() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       //create preparation menu
+           PackShipView packV = new PackShipView();
+           packV.display();
+    
     }
 
     private void inspectElement() {

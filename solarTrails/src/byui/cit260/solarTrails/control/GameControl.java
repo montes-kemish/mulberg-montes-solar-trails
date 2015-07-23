@@ -38,7 +38,7 @@ public class GameControl {
        
     public static void createNewGame(Player player)
             
-            throws MapControlException {
+        throws MapControlException {
         Game game = new Game(); //create new Game
         SolarTrails.setCurrentGame(game); //allocate it in solar Trails
         
@@ -118,7 +118,4 @@ public class GameControl {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-     
-  
-}  
-
+}

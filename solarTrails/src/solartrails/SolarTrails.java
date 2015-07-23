@@ -22,21 +22,15 @@ public class SolarTrails {
     
     private static Game currentGame = null;
     private static Player player = null; 
+    public static final double waterDailyConsumption = 2.0;
+    public static final double foodDailyConsumption = 1.5;
+    public static final double fuelDailyConsumption = 10.0;
+    public static final double numberOfCrewMemebers = 7.0;
     
     public static void main(String[] args) {
-        
-        Player playerOne = new Player();
-        playerOne.setName("Ksh");
-        playerOne.setBestTime(7.00);
-        
-        String playerInfo = playerOne.toString();
-        System.out.println(playerInfo);
-       
-       String actorInfo = Actor.Adventurie.getDescription();
-       System.out.println(actorInfo);
-       
-        
-        StartProgramView startProgramView = new StartProgramView(); 
+     
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.startProgram(); 
       try{
           
           startProgramView.display();
@@ -65,4 +59,21 @@ public class SolarTrails {
     public static void setPlayer(Player player) {
         SolarTrails.player = player;
     }
+
+    public static double getWaterDailyConsumption() {
+        return waterDailyConsumption;
+    }
+
+    public static double getFoodDailyConsumption() {
+        return foodDailyConsumption;
+    }
+
+    public static double getFuelDailyConsumption() {
+        return fuelDailyConsumption;
+    }
+
+    public static double getNumberOfCrewMemebers() {
+        return numberOfCrewMemebers;
+    }
+    
 }

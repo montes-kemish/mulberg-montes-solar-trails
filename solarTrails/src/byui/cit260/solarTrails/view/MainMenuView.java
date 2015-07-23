@@ -81,7 +81,7 @@ public class MainMenuView extends View {
             return;
         }
         GameMenuView gameMenu = new GameMenuView();
-            gameMenu.display();// this function will initiate the game menu after it has been created
+        gameMenu.display();// this function will initiate the game menu after it has been created
     }
 
     private void startExistingGame() {
