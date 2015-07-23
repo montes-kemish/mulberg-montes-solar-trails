@@ -31,6 +31,10 @@ public class SpaceCraft implements Serializable {
             this.width = width;
             this.maxWeightCapacity = maxWeightCapacity;
         }
+
+    public SpaceCraft() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
         public String getDescription(){
             return this.description;
         }

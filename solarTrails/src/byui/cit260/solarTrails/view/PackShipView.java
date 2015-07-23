@@ -7,6 +7,8 @@ package byui.cit260.solarTrails.view;
 
 import byui.cit260.solarTrails.control.GameControl;
 import byui.cit260.solarTrails.model.InventoryItem;
+import byui.cit260.solarTrails.model.InventoryList;
+import static byui.cit260.solarTrails.model.InventoryList.food;
 import java.util.Scanner;
 
 /**
@@ -75,6 +77,11 @@ public class PackShipView extends View {
                 System.out.println("Invalid amount of food required");
                 continue;//continue with the while loop
             }
+           
+            
+        
+            
+           
           break;
         }      
         return foodRequired;

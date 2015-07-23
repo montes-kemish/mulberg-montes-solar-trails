@@ -14,6 +14,7 @@ import byui.cit260.solarTrails.model.Player;
 import byui.cit260.solarTrails.model.RegularScene;
 import byui.cit260.solarTrails.model.InventoryItem;
 import byui.cit260.solarTrails.model.InventoryList;
+import byui.cit260.solarTrails.model.SpaceCraft;
 import java.util.Collections;
 import solartrails.SolarTrails;
 
@@ -49,7 +50,8 @@ public class GameControl {
         game.setInventory(inventory);
         
         //should I create the Ship if it's an enumeration list   
-          
+         SpaceCraft spaceCraft = new SpaceCraft(); 
+         game.setSpaceCraft(spaceCraft);
         
         //Discovery discovery = new Discovery();
         //game.setDiscovery(discovery); // Save discovery 
@@ -85,14 +87,14 @@ public class GameControl {
       
       InventoryItem vaccume = new InventoryItem();
       vaccume.setDescription("Spacial Vaccume");
-      vaccume.setQuantityInStock(0);
+      vaccume.setQuantityInStock(1);
       vaccume.setRequiredQuantity(1);
       inventory[InventoryList.vaccume.ordinal()] = vaccume;
       
       
      InventoryItem lens = new InventoryItem();
       lens.setDescription("super lens");
-      lens.setQuantityInStock(0);
+      lens.setQuantityInStock(1);
       lens.setRequiredQuantity(1);
       inventory[InventoryList.lens.ordinal()] = lens;
           
@@ -115,7 +117,8 @@ public class GameControl {
     }
 
     public static InventoryItem[] getSortedInventoryList() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
+        
     }
 
 }

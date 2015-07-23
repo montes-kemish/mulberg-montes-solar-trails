@@ -15,8 +15,8 @@ import java.util.Scanner;
 public class StorageControl {
     
     public void addToInventory(InventoryItem[] inventoryItem,double amount ){
-        
-        
-    }
     
+        
+    
+    }       
 }

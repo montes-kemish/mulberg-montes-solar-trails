@@ -94,7 +94,7 @@ public class Game implements Serializable {
     }
 
     public void setInventory(InventoryItem[] inventory) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     public void setSpaceCraft(SpaceCraft spaceCraft) {

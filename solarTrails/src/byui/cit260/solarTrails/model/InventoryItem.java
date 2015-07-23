@@ -76,15 +76,15 @@ private String description;
     }
 
     public void setDescription(String water) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.description = description;
     }
 
-    public void setQuantityInStock(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setQuantityInStock() {
+       this.quantityInStock = quantityInStock;
     }
 
     public String getDescription() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return description;
     }
 
     public void setStorageType(String storageType) {
